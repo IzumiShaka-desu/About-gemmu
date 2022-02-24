@@ -20,7 +20,7 @@ public struct AboutView: View {
   @AppStorage("imageUrl", store: UserDefaults(
     suiteName: "group.DarkshanDev.userdefaults")) private  var imageUrl: String?
   
-  var body: some View {
+public  var body: some View {
     ZStack {
       Color.flatDarkBackground.ignoresSafeArea()
       GeometryReader { geometry in
