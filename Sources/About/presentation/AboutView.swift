@@ -10,7 +10,7 @@ import NetworkImage
 import Common
 import UIKit
 
-struct AboutView: View {
+public struct AboutView: View {
   @State private var bottomSheetShown = false
   @State var updater: Bool = false
   @AppStorage("name", store: UserDefaults(
