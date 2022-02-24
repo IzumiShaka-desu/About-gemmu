@@ -19,7 +19,7 @@ public struct AboutView: View {
     suiteName: "group.DarkshanDev.userdefaults")) private var position: String?
   @AppStorage("imageUrl", store: UserDefaults(
     suiteName: "group.DarkshanDev.userdefaults")) private  var imageUrl: String?
-  
+public  init(){}
 public  var body: some View {
     ZStack {
       Color.flatDarkBackground.ignoresSafeArea()
@@ -37,7 +37,7 @@ public  var body: some View {
                 ProgressView()
               } fallback: {
                 Image(systemName: "photo")
-                
+
               }
               .frame(width: 150, height: 150)
               .clipped()
@@ -49,7 +49,7 @@ public  var body: some View {
                 ProgressView()
               } fallback: {
                 Image(systemName: "photo")
-                
+
               }
               .frame(width: 150, height: 150)
               .clipped()
@@ -75,7 +75,7 @@ public  var body: some View {
         BottomSheetView(
           isOpen: self.$bottomSheetShown,
           maxHeight: geometry.size.height * 0.7
-          
+
         ) {
           ProfileFormView(
             username: username ?? "",
@@ -135,19 +135,19 @@ struct ProfileFormView: View {
           Image(systemName: "pencil.circle")
           Text("Update user profile")
         })
-      
+
     }
-    
+
   }
 }
 
 struct BottomSheetView<Content: View>: View {
   @Binding var isOpen: Bool
-  
+
   let maxHeight: CGFloat
   let minHeight: CGFloat
   let content: Content
-  
+
   init(isOpen: Binding<Bool>, maxHeight: CGFloat, @ViewBuilder content: () -> Content) {
     self.minHeight = maxHeight * Constants.minHeightRatio
     self.maxHeight = maxHeight
@@ -157,7 +157,7 @@ struct BottomSheetView<Content: View>: View {
   private var offset: CGFloat {
     isOpen ? 0 : maxHeight - minHeight
   }
-  
+
   private var indicator: some View {
     RoundedRectangle(cornerRadius: Constants.radius)
       .fill(Color.secondary)
@@ -166,9 +166,9 @@ struct BottomSheetView<Content: View>: View {
         height: Constants.indicatorHeight
       )
   }
-  
+
   @GestureState private var translation: CGFloat = 0
-  
+
   var body: some View {
     GeometryReader { geometry in
       VStack(spacing: 0) {

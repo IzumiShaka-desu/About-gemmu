@@ -10,11 +10,11 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "About",
-            targets: ["About"]),
+            targets: ["About"])
     ],
     dependencies: [
-      .package(name: "NetworkImage", url: "https://github.com/gonzalezreal/NetworkImage.git",from: "4.0.0"),
-      .package(url: "https://github.com/IzumiShaka-desu/Common.git",.branch("main"))
+      .package(name: "NetworkImage", url: "https://github.com/gonzalezreal/NetworkImage.git", from: "4.0.0"),
+      .package(url: "https://github.com/IzumiShaka-desu/Common.git", .branch("main"))
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
@@ -29,6 +29,6 @@ let package = Package(
             ]),
         .testTarget(
             name: "AboutTests",
-            dependencies: ["About"]),
+            dependencies: ["About"])
     ]
 )
