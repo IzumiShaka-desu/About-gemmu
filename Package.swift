@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "About",
+    platforms: [.iOS(.v14)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -12,6 +13,8 @@ let package = Package(
             targets: ["About"]),
     ],
     dependencies: [
+      .package(name: "NetworkImage", url: "https://github.com/gonzalezreal/NetworkImage.git",from: "4.0.0"),
+      .package(url: "https://github.com/IzumiShaka-desu/Common.git",.branch("main"))
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
@@ -20,7 +23,10 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "About",
-            dependencies: []),
+            dependencies: [
+            "NetworkImage",
+            "Common"
+            ]),
         .testTarget(
             name: "AboutTests",
             dependencies: ["About"]),
